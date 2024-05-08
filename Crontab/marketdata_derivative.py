@@ -9,7 +9,7 @@ def append_jobs(jobs):
 
 class gen_50ms_otmd_dev(AbstractJob):
     def __init__(self, ):
-        super(gen_1d_md, self).__init__()
+        super().__init__()
         self.job_name = 'gen_50ms_otmd_dev'
         self.system_syntax = {}
         self.dependent_job_list = ['local_check',]
