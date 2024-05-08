@@ -33,12 +33,12 @@ def show(date=None):
 
 from .blocking import append_jobs as append_jobs_for_blocking
 from .marketdata_h5 import append_jobs as append_jobs_for_marketdata_h5
+from .marketdata_derivative import append_jobs as append_jobs_for_marketdata_derivative
 from .s2d import append_jobs as append_jobs_for_s2d
 from .s2d_realtime import append_jobs as append_jobs_for_s2d_realtime
 from .alpha import append_jobs as append_jobs_for_alpha
 from .hft import append_jobs as append_jobs_for_hft
 from .alpha_realtime import append_jobs as append_jobs_for_alpha_realtime
-
 
 def run():
     time_str = time.strftime("%H:%M:%S", time.localtime())
@@ -48,6 +48,7 @@ def run():
         myJobsList = []
         append_jobs_for_blocking(myJobsList)
         append_jobs_for_marketdata_h5(myJobsList)
+        append_jobs_for_marketdata_derivative(myJobsList)
         append_jobs_for_s2d(myJobsList)
         append_jobs_for_s2d_realtime(myJobsList)
         append_jobs_for_alpha(myJobsList)
